@@ -20,17 +20,17 @@ func main() {
     // ...
 
     _, err = sshx.NewClient(
-		addr, // host(:port) e.g. 127.0.0.1:1234 or github.com
-		"username", // e.g. root
-		sshx.WithPassword("password"),
-		sshx.WithSigner(signer), // ssh private key of type ssh.Signer
-		sshx.WithFirstTimeSetup(myBestFriendKey, myNotSoBestFriendKey), // ssh public keys of type ssh.PublicKey
+        addr, // host(:port) e.g. 127.0.0.1:1234 or github.com
+        "username", // e.g. root
+        sshx.WithPassword("password"),
+        sshx.WithSigner(signer), // ssh private key of type ssh.Signer
+        sshx.WithFirstTimeSetup(myBestFriendKey, myNotSoBestFriendKey), // ssh public keys of type ssh.PublicKey
         // since password is set, this will add the signer's public key as well as your friends keys to the server and use that for future method calls
         // (if you don't use a password it is assumed the signer was already set up given there needs to be at least one authentication method set)
-	)
-	if err != nil {
-		// ...
-	}
+    )
+    if err != nil {
+        // ...
+    }
 
     // ...
 }
